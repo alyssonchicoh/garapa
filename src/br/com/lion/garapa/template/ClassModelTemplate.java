@@ -14,7 +14,7 @@ import br.com.lion.garapa.util.HelperString;
  * @since 26/02/2019
  * @version 1.0
  */
-public class ClassModel extends ClassGeneric{
+public class ClassModelTemplate extends ClassGeneric{
 	
 	/**
 	 * REPRESENTAÇÃO DO NOME DA CLASSE DE MODELO
@@ -27,7 +27,7 @@ public class ClassModel extends ClassGeneric{
 	private List<Attribute> attributes;
 	
 
-	public ClassModel(String className){
+	public ClassModelTemplate(String className){
 		this.className = className;
 		this.attributes = new ArrayList<Attribute>();
 	}
@@ -74,7 +74,7 @@ public class ClassModel extends ClassGeneric{
 		builder.append(super.lineJump);
 
 		
-		builder.append(HelperString.spacingFirstLevel +"public "+className + "(){");
+		builder.append(HelperString.spacingFirstLevel + AccessModifierType.ACCESS_MODIFIER_PUBLIC + " "+className + "(){");
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
 
