@@ -9,6 +9,12 @@ import br.com.lion.garapa.util.GetAndSetGenerator;
  * @version 1
  */
 public class Attribute {
+	
+	/**
+	 * REPRESENTA O MODIFICADOR DE ACESSO
+	 */
+	private String accessModifier;
+	
 	/**
 	 * REPRESENTA O TIPO DO ATRIBUTO
 	 */
@@ -33,11 +39,17 @@ public class Attribute {
 		
 	}
 	
-	public Attribute(String type,String name){
+	public Attribute(String accessModifier,String type,String name){
+		this.accessModifier = accessModifier;
 		this.type = type;
 		this.name = name;
-		get = GetAndSetGenerator.generatorGet(this);
-		set = GetAndSetGenerator.generatorSet(this);
+		this.get = GetAndSetGenerator.generatorGet(this);
+		this.set = GetAndSetGenerator.generatorSet(this);
+	}
+	
+	@Override
+	public String toString() {
+		return this.accessModifier + " " + this.type + " "+this.name + ";";
 	}
 	
 	public String getType() {
@@ -63,6 +75,14 @@ public class Attribute {
 	}
 	public void setSet(String set) {
 		this.set = set;
+	}
+
+	public String getAccessModifier() {
+		return accessModifier;
+	}
+
+	public void setAccessModifier(String accessModifier) {
+		this.accessModifier = accessModifier;
 	}
 	
 	

@@ -6,6 +6,10 @@ package br.com.lion.garapa.util;
  * @since 27/02/2019
  */
 public class HelperString {
+	
+	public static String spacingFirstLevel = "	"; 
+	public static String spacingSecondLevel = "		"; 
+
 
 	/**
 	 * Transforma a primeira letra em uma letra maiscula
@@ -20,14 +24,21 @@ public class HelperString {
 		String returnText = "";
 		for (int i = 0; i < text.length(); i++) {
 			if(i == 0){
-				returnText = String.valueOf(text.charAt(i)).toUpperCase();
+				returnText = returnText + String.valueOf(text.charAt(i)).toUpperCase();
 			}else{
-				returnText = String.valueOf(text.charAt(i)).toLowerCase();
+				returnText = returnText + String.valueOf(text.charAt(i)).toLowerCase();
 
 			}
 		}
 		
 		return returnText;
 		
+	}
+	
+	public static String lowwerAll(String text){
+		if(text == null || text.equals("")){
+			return "";
+		}
+		return text.toLowerCase();
 	}
 }

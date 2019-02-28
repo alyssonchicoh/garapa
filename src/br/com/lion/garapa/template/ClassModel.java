@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import br.com.lion.garapa.model.Attribute;
+import br.com.lion.garapa.util.AccessModifierType;
+import br.com.lion.garapa.util.HelperString;
+
 /**
  * REPRESENTA A CLASSE DE MODELO QUE SERÁ GERADA NO TEMPLATE DO GARAPA FRAMWWORK
  * @author alyssonnascimento
@@ -20,17 +24,12 @@ public class ClassModel extends ClassGeneric{
 	/**
 	 * ATRIBUTOS DA CLASSE DE MODELO;
 	 */
-	private List<String> attributes;
+	private List<Attribute> attributes;
 	
-	/**
-	 * REPRESENTA OS TIPOS DOS ATRIBUTOS 
-	 */
-	private List<String> attributesTypes;
-	
+
 	public ClassModel(String className){
 		this.className = className;
-		this.attributes = new ArrayList<String>();
-		this.attributesTypes = new ArrayList<String>();
+		this.attributes = new ArrayList<Attribute>();
 	}
 	
 	/**
@@ -41,10 +40,8 @@ public class ClassModel extends ClassGeneric{
 	 */
 	public boolean addAttribute(String type,String name){
 		try{
-		
-			attributes.add(name);
-			attributesTypes.add(type);
-
+			Attribute att = new Attribute(AccessModifierType.ACCESS_MODIFIER_PRIVATE, type, name);
+			this.attributes.add(att);
 		}catch(Exception e){
 			e.printStackTrace();
 			return false;
@@ -52,28 +49,12 @@ public class ClassModel extends ClassGeneric{
 		return true;
 	}
 	
-	/**
-	 * MÉTODO RESPONSÁVEL POR LISTAR TODOS OS ATRIBUTOS DE UMA DETERMINADA CLASSE
-	 * @return
-	 */
-	public List<String[]> getAllAttributes(){
-		List<String[]> listAttributes = new ArrayList<String[]>();
-		String[] attributesReturn = new String[2]; 
-		
-		for (int i = 0; i < attributes.size(); i++) {
-			String name = attributes.get(i);
-			String type = attributesTypes.get(i);
-			
-			attributesReturn[0] = type;
-			attributesReturn[1] = name;
-			
-			listAttributes.add(attributesReturn);
-			attributesReturn = new String[2]; 
-		}
-		
-		return listAttributes;
-	}
 	
+	
+	public List<Attribute> getAttributes() {
+		return attributes;
+	}
+
 	/**
 	 * MÉTODO RESPONSÁVEL POR CRIAR A CLASSE
 	 */
@@ -82,38 +63,40 @@ public class ClassModel extends ClassGeneric{
 		builder.append("public class " +className + "{");
 		builder.append(super.lineJump);
 		
-		List<String[]> att = getAllAttributes();
+		List<Attribute> att = getAttributes();
 		
-		for (String[] value : att) {
-			builder.append("	private "+value[0] + " " + value[1] + ";");
-			builder.append("\n");
+		for (Attribute attribut : att) {
+			builder.append(HelperString.spacingFirstLevel + attribut.toString());
+			builder.append(super.lineJump);
 		}
 		
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
 
 		
-		builder.append("public "+className + "(){");
+		builder.append(HelperString.spacingFirstLevel +"public "+className + "(){");
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
 
-		builder.append("}");
+		builder.append(HelperString.spacingFirstLevel +"}");
+		builder.append(super.lineJump);
+
 		
-		builder.append("public "+className + "(");
-		for (String[] value : att) {
-			builder.append(""+value[0] + " " + value[1] + ",");
+		
+		for (Attribute attribut : att) {
+			builder.append(attribut.getGet());
+			builder.append(super.lineJump);
+			builder.append(super.lineJump);
+
+			builder.append(attribut.getSet());
+			builder.append(super.lineJump);
+			builder.append(super.lineJump);
+
+
 		}
-		builder.append("{");
-
-		
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
 
-		builder.append("}");
-		builder.append(super.lineJump);
-		builder.append(super.lineJump);
-
-		
 		builder.append("}");
 		
 		System.out.println(builder);

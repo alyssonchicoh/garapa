@@ -12,22 +12,35 @@ public class GetAndSetGenerator {
 
 	private String test;
 	
+	/**
+	 * Método responsável por gerar um método GET de um determinado atributo
+	 * @param attribute atributo a qual se deseja gerar o método GET
+	 * @return String representando o método GET
+	 */
 	public static String generatorGet(Attribute attribute){
 		StringBuilder builder = new StringBuilder();
 		//PUBLIC STRING getPessoa(){
-		builder.append("public "+attribute.getType() + "get"+HelperString.upperFirst(attribute.getName()) + "(){");
+		builder.append(HelperString.spacingFirstLevel + "public "+attribute.getType() + " get"+HelperString.upperFirst(attribute.getName()) + "(){");
 		builder.append("\n");
-		builder.append("return this."+attribute.getName());
+		builder.append(HelperString.spacingSecondLevel + "return this."+HelperString.lowwerAll(attribute.getName()) +";");
 		builder.append("\n");
-		builder.append("}");
+		builder.append(HelperString.spacingFirstLevel +"}");
 
-		return "";
+		return builder.toString();
 	}
 	
 
-	public static String generatorSet(){
-		return "";
-	}
+	public static String generatorSet(Attribute attribute){
+		StringBuilder builder = new StringBuilder();
+		//PUBLIC STRING getPessoa(){
+		builder.append(HelperString.spacingFirstLevel +"public void set"+HelperString.upperFirst(attribute.getName()) + "("+HelperString.upperFirst(attribute.getType()) + " " + HelperString.lowwerAll(attribute.getName()) +"){");
+		builder.append("\n");
+		builder.append(HelperString.spacingSecondLevel +"this."+HelperString.lowwerAll(attribute.getName()) +" = "+HelperString.lowwerAll(attribute.getName() +";"));
+		builder.append("\n");
+		builder.append(HelperString.spacingFirstLevel +"}");
+
+		return builder.toString();
+		}
 
 
 	public String getTest() {
