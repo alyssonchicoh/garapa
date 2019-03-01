@@ -36,6 +36,9 @@ public class ClassGeneric {
 	 */
 	protected final String method_seacrh = "listar";
 	
+	protected final String method_append = ".append";
+
+	
 	/**
 	 * DEFINI��O DO PARAMETRO PARA M�TODO DE PESQUISA
 	 */
@@ -124,6 +127,14 @@ public class ClassGeneric {
 	protected final String reserveWord_DOT = ".";
 	
 	/**
+	 * DEFINICAO DE =
+	 */
+	protected final String reserveWord_EQUALS = "=";
+	
+	protected final String reserveWord_DOUBLE_SPACES = "\"";
+
+	
+	/**
 	 * DEFINICAO DA PALAVRA CHAVA EXTENDS
 	 */
 	protected final String reservedWord_EXTENDS = "extends";
@@ -143,6 +154,22 @@ public class ClassGeneric {
 	 * DEFINICAO DA PALAVRA PACKAGE
 	 */
 	protected final String reservedWord_PACKAGE = "package";
+
+	/**
+	 * 
+	 */
+	protected final String reservedWord_FINAL = "final";
+	
+	/**
+	 * 
+	 */
+	protected final String reservedWord_NEW = "new";
+	
+	protected final String reservedWord_RETURN = "return";
+
+	
+
+
 
 	
 	

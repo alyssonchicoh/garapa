@@ -27,9 +27,9 @@ public class ClassModelTemplate extends ClassGeneric{
 	private List<Attribute> attributes;
 	
 
-	public ClassModelTemplate(String className){
+	public ClassModelTemplate(String className,List<Attribute> attributes){
 		this.className = className;
-		this.attributes = new ArrayList<Attribute>();
+		this.attributes = attributes;
 	}
 	
 	/**

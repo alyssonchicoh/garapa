@@ -41,4 +41,11 @@ public class HelperString {
 		}
 		return text.toLowerCase();
 	}
+	
+	public static String upperAll(String text){
+		if(text == null || text.equals("")){
+			return "";
+		}
+		return text.toUpperCase();
+	}
 }

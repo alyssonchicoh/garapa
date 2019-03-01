@@ -1,6 +1,4 @@
-package br.com.lion.garapa.util;
-
-
+package br.com.lion.Information;
 
 /**
  * INFORMACOES SOBRE AS PALAVRAS RESERVADAS DO HIBERNATE
