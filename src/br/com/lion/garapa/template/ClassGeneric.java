@@ -1,6 +1,6 @@
 package br.com.lion.garapa.template;
 /**
- * DETÉM DE TODOS OS MÉTODOS E ATRIBUTOS NECESSÁRIOS PARA GERAÇÃO DE CLASSES
+ * DETï¿½M DE TODOS OS Mï¿½TODOS E ATRIBUTOS NECESSï¿½RIOS PARA GERAï¿½ï¿½O DE CLASSES
  * @author alyssonnascimento
  *
  */
@@ -12,76 +12,129 @@ public class ClassGeneric {
 	protected final String lineJump = "\n";
 	
 	/**
-	 * ESPAÇO
+	 * ESPAï¿½O
 	 */
 	protected final String space = " ";
 	
 	/**
-	 * DEFINIÇÃO DE NOME DE MÉTODO DE PESQUISA
+	 * DEFINICAO DO PACOTE DE DAO
+	 */
+	protected final String name_dao_package = "dao";
+	
+	/**
+	 * DEFINICAO DO PACOTE DE MODEL
+	 */
+	protected final String name_dao_model = "model";
+	
+	/**
+	 * DEFINIï¿½ï¿½O DE NOME DE Mï¿½TODO DE PESQUISA
 	 */
 	protected final String method_seacrh = "listar";
 	
 	/**
-	 * DEFINIÇÃO DO PARAMETRO PARA MÉTODO DE PESQUISA
+	 * DEFINIï¿½ï¿½O DO PARAMETRO PARA Mï¿½TODO DE PESQUISA
 	 */
 	protected final String parameter_method_seacrh = "pesquisa";
 	
 	/**
-	 * DEFINIÇÃO DO TIPO STRING
+	 * DEFINICAO DO NOME DA CLASSE GENERIC DAO
 	 */
-	protected final String type_STRING = "String";
+	protected final String name_class_generic_dao = "GenericDAO";
 	
 	/**
-	 * DEFINIÇÃO DO TIPO LISTA
+	 * DEFINICAO DA IMPORTACAO DO TIPO DE DADOS LISTA
+	 */
+	protected final String import_java_util_list = "java.util.List";
+	
+	/**
+	 * DEFINIï¿½ï¿½O DO TIPO STRING
+	 */
+	protected final String type_STRING = "String";
+
+	/**
+	 * DEFINIï¿½ï¿½O DO TIPO INTEGER
+	 */
+	protected final String type_INTEGER = "Integer";
+	
+	
+	/**
+	 * DEFINIï¿½ï¿½O DO TIPO LISTA
 	 */
 	protected final String type_LIST = "List";
 
 	/**
-	 * DEFINIÇÃO DO TIPO CLASSE
+	 * DEFINIï¿½ï¿½O DO TIPO CLASSE
 	 */
 	protected final String reservedWord_CLASS = "class";
 	
 	/**
-	 * DEFINIÇÃO DO TIPO INTERFACE
+	 * DEFINIï¿½ï¿½O DO TIPO INTERFACE
 	 */
 	protected final String reservedWord_INTERFACE = "interface";
 	
 	/**
-	 * DEFINIÇÃO DO ABRE CHAVES
+	 * DEFINIï¿½ï¿½O DO ABRE CHAVES
 	 */
 	protected final String reservedWord_BRACE_OPEN = "{";
+
 	
 	/**
-	 * DEFINIÇÃO DO FECHA CHAVE
+	 * DEFINIï¿½ï¿½O DO FECHA CHAVE
 	 */
 	protected final String reservedWord_BRACE_CLOSE = "}";
 	
 	/**
-	 * DEFINIÇÃO ABRE PARENTESES
+	 * DEFINIï¿½ï¿½O ABRE PARENTESES
 	 */
 	protected final String reservedWord_PARENTHESIS_OPEN = "(";
 
 	/**
-	 * DEFINIÇÃO DO FECHA PARENTESES
+	 * DEFINIï¿½ï¿½O DO FECHA PARENTESES
 	 */
 	protected final String reservedWord_PARENTHESIS_CLOSE = ")";
 
 	/**
-	 * DEFINIÇÃO DO MENOR QUE
+	 * DEFINIï¿½ï¿½O DO MENOR QUE
 	 */
 	protected final String reserveWord_LESS_THAN = "<";
 	
 	/**
-	 * DEFINIÇÃO DO MAIOR QUE
+	 * DEFINIï¿½ï¿½O DO MAIOR QUE
 	 */
 	protected final String reserveWord_BIGGER_THAN = ">";
 	
 	/**
-	 * DEFINIÇÃO DO PONTO E VIRGULA
+	 * DEFINIï¿½ï¿½O DO PONTO E VIRGULA
 	 */
 	protected final String reserveWord_DOT_AND_COMMA = ";";
 
+	/**
+	 * DEFINIï¿½ï¿½O dA VIRGULA
+	 */
+	protected final String reserveWord_COMMA = ",";
 
+	/**
+	 * DEFINIï¿½ï¿½O de Ponto
+	 */
+	protected final String reserveWord_DOT = ".";
+	
+	/**
+	 * DEFINICAO DA PALAVRA CHAVA EXTENDS
+	 */
+	protected final String reservedWord_EXTENDS = "extends";
+	
+	/**
+	 * DEFINICAO DA PALAVRA IMPORT
+	 */
+	protected final String reservedWord_IMPORT = "import";
+
+
+	/**
+	 * DEFINICAO DA PALAVRA PACKAGE
+	 */
+	protected final String reservedWord_PACKAGE = "package";
+
+	
 	
 	
 

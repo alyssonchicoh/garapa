@@ -5,7 +5,7 @@ import br.com.lion.garapa.util.AccessModifierType;
 import br.com.lion.garapa.util.HelperString;
 
 /**
- * Classe responsável por gerar a interface da classe DAO
+ * Classe responsï¿½vel por gerar a interface da classe DAO
  * @author alyssonnascimento
  * @since 28/02/2019
  *
@@ -26,7 +26,7 @@ public class ClassDAOTemplate extends ClassGeneric {
 	}
 	
 	/**
-	 * MÉTODO UTILIZADO PARA AGRUPAR TODAS A CRIAÇÃO DA CLASSE DE DAO
+	 * Mï¿½TODO UTILIZADO PARA AGRUPAR TODAS A CRIAï¿½ï¿½O DA CLASSE DE DAO
 	 */
 	public void createClass(){
 		StringBuffer builder = new StringBuffer();
@@ -38,29 +38,60 @@ public class ClassDAOTemplate extends ClassGeneric {
 	}
 	
 	/**
-	 * MÉTODO UTILIZADO PARA CONSTRUIR A DEFINIÇÃO DA CLASSE
-	 * @return STRING COM O CONTEUDO DA DEFINIÇÃO DA CLASSE
+	 * Mï¿½TODO UTILIZADO PARA CONSTRUIR A DEFINIï¿½ï¿½O DA CLASSE
+	 * @return STRING COM O CONTEUDO DA DEFINIï¿½ï¿½O DA CLASSE
 	 */
 	private String createHeadClass(){
 		StringBuilder builder = new StringBuilder();
+		builder.append(super.reservedWord_PACKAGE);
+		builder.append(super.space);
+		builder.append(super.name_dao_package);
+		builder.append(super.reserveWord_DOT_AND_COMMA);
+		builder.append(super.lineJump);
+		
+		builder.append(super.reservedWord_IMPORT);
+		builder.append(super.space);
+		builder.append(super.import_java_util_list);
+		builder.append(super.reserveWord_DOT_AND_COMMA);
+		builder.append(super.lineJump);
+		builder.append(super.reservedWord_IMPORT);
+		builder.append(super.space);
+		builder.append(super.name_dao_model);
+		builder.append(super.reserveWord_DOT);
+		builder.append(this.className);
+		builder.append(super.reserveWord_DOT_AND_COMMA);
+		
+		builder.append(super.lineJump);
+		builder.append(super.lineJump);
+		
 		builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
 		builder.append(super.space);
 		builder.append(super.reservedWord_INTERFACE);
 		builder.append(super.space);
 		builder.append(className + classDomain);
+		builder.append(super.space);
+		builder.append(super.reservedWord_EXTENDS);
+		builder.append(super.space);
+		builder.append(super.name_class_generic_dao);
+		builder.append(super.reserveWord_LESS_THAN);
+		builder.append(this.className);
+		builder.append(super.reserveWord_COMMA);
+		builder.append(super.type_INTEGER);
+		builder.append(super.reserveWord_BIGGER_THAN);
 		builder.append(super.reservedWord_BRACE_OPEN);
+		
 		return builder.toString();
 	}
 	
 	/**
-	 * MÉTODO UTILIZADO PARA CONSTRUIR A DEFINIÇÃO DOS MÉTODOS
-	 * @return STRING COM O CONTEUDO DA DEFINIÇÃO DOS MÉTODOS
+	 * Mï¿½TODO UTILIZADO PARA CONSTRUIR A DEFINIï¿½ï¿½O DOS Mï¿½TODOS
+	 * @return STRING COM O CONTEUDO DA DEFINIï¿½ï¿½O DOS Mï¿½TODOS
 	 */
 	private String createBodyClass(){
 		StringBuilder builder = new StringBuilder();
-		builder.append(HelperString.spacingFirstLevel);
 		builder.append(super.lineJump);
-
+		builder.append(super.lineJump);
+		builder.append(HelperString.spacingFirstLevel);
 		builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
 		builder.append(super.space);
 		builder.append(super.type_LIST);
@@ -79,8 +110,8 @@ public class ClassDAOTemplate extends ClassGeneric {
 	}
 	
 	/**
-	 * MÉTODO UTILIZADO PARA CONSTRUIR A DEFINIÇÃO DO FINAL DA CLASSE
-	 * @return STRING COM O CONTEUDO DA DEFINIÇÃO DOS FINAL DA CLASSE
+	 * Mï¿½TODO UTILIZADO PARA CONSTRUIR A DEFINIï¿½ï¿½O DO FINAL DA CLASSE
+	 * @return STRING COM O CONTEUDO DA DEFINIï¿½ï¿½O DOS FINAL DA CLASSE
 	 */
 	private String createFotterClass(){
 		StringBuilder builder = new StringBuilder();
