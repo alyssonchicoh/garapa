@@ -12,7 +12,8 @@ import br.com.lion.garapa.util.HelperString;
  */
 public class ClassDAOTemplate extends ClassGeneric {
 	/**
-	 * NOME DA CLASSE A QUAL SE DESEJA GERAR O DAO
+	 * NOME DA CLASSE A QUAL SE DES
+	 * EJA GERAR O DAO
 	 */
 	private String className;
 	
@@ -56,7 +57,7 @@ public class ClassDAOTemplate extends ClassGeneric {
 		builder.append(super.lineJump);
 		builder.append(super.reservedWord_IMPORT);
 		builder.append(super.space);
-		builder.append(super.name_dao_model);
+		builder.append(super.name_model_package);
 		builder.append(super.reserveWord_DOT);
 		builder.append(this.className);
 		builder.append(super.reserveWord_DOT_AND_COMMA);

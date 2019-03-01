@@ -22,9 +22,14 @@ public class ClassGeneric {
 	protected final String name_dao_package = "dao";
 	
 	/**
+	 * DEFINICAO DO PACOTE DE DAO
+	 */
+	protected final String name_dao_impl_package = "daoImpl";
+	
+	/**
 	 * DEFINICAO DO PACOTE DE MODEL
 	 */
-	protected final String name_dao_model = "model";
+	protected final String name_model_package = "model";
 	
 	/**
 	 * DEFINI��O DE NOME DE M�TODO DE PESQUISA
@@ -122,6 +127,11 @@ public class ClassGeneric {
 	 * DEFINICAO DA PALAVRA CHAVA EXTENDS
 	 */
 	protected final String reservedWord_EXTENDS = "extends";
+	
+	/**
+	 * DEFINICAO DA PALAVRA CHAVA EXTENDS
+	 */
+	protected final String reservedWord_IMPLEMENTS = "implements";
 	
 	/**
 	 * DEFINICAO DA PALAVRA IMPORT
