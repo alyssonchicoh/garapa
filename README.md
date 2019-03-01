@@ -1,6 +1,6 @@
 [TOC]
 
-###Sobre
+#obre
 
 Esse projeto tem como objetivo principal, implementar um gerador de código, automático de CRUD´s. A ideia principal do mesmo, é facilidade o trabalho dos desenvolvedores de software, automatizando tarefas repetidas e propondo que desenvolvedor foque no que interessa de fato, as regras de negócio! 
 
@@ -10,7 +10,7 @@ Esse projeto tem como objetivo principal, implementar um gerador de código, aut
 - Python
 - JavaScript
 
-###Comandos
+#Comandos
 
 
 **Criação do projeto:
