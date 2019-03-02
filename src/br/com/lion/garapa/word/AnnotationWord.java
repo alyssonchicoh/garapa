@@ -1,4 +1,4 @@
-package br.com.lion.garapa.Word;
+package br.com.lion.garapa.word;
 
 /**
  * CLASSE COM AS ANOTACOES GERAIS

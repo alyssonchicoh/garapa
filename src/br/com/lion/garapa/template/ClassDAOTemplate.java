@@ -1,12 +1,12 @@
 package br.com.lion.garapa.template;
 
-import br.com.lion.garapa.Word.DataTypeWord;
-import br.com.lion.garapa.Word.ImportWord;
-import br.com.lion.garapa.Word.ReserveWord;
-import br.com.lion.garapa.Word.SpecialCharactersWord;
 import br.com.lion.garapa.model.Attribute;
 import br.com.lion.garapa.util.AccessModifierType;
 import br.com.lion.garapa.util.HelperString;
+import br.com.lion.garapa.word.DataTypeWord;
+import br.com.lion.garapa.word.ImportWord;
+import br.com.lion.garapa.word.ReserveWord;
+import br.com.lion.garapa.word.SpecialCharactersWord;
 
 /**
  * Classe respons�vel por gerar a interface da classe DAO

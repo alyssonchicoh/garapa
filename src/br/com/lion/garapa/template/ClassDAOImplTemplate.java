@@ -1,17 +1,17 @@
 package br.com.lion.garapa.template;
 
-import br.com.lion.garapa.Word.AnnotationWord;
-import br.com.lion.garapa.Word.ClassWord;
-import br.com.lion.garapa.Word.DataTypeWord;
-import br.com.lion.garapa.Word.HibernateWord;
-import br.com.lion.garapa.Word.ImportWord;
-import br.com.lion.garapa.Word.MethodWord;
-import br.com.lion.garapa.Word.ObjectWord;
-import br.com.lion.garapa.Word.ReserveWord;
-import br.com.lion.garapa.Word.SQLWord;
-import br.com.lion.garapa.Word.SpecialCharactersWord;
 import br.com.lion.garapa.util.AccessModifierType;
 import br.com.lion.garapa.util.HelperString;
+import br.com.lion.garapa.word.AnnotationWord;
+import br.com.lion.garapa.word.ClassWord;
+import br.com.lion.garapa.word.DataTypeWord;
+import br.com.lion.garapa.word.HibernateWord;
+import br.com.lion.garapa.word.ImportWord;
+import br.com.lion.garapa.word.MethodWord;
+import br.com.lion.garapa.word.ObjectWord;
+import br.com.lion.garapa.word.ReserveWord;
+import br.com.lion.garapa.word.SQLWord;
+import br.com.lion.garapa.word.SpecialCharactersWord;
 
 /**
  * CLASSE UTILIZADA PARA REALIZAR A IMPLEMENTA��AO DA CLASSE DAOImpl

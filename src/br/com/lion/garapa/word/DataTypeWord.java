@@ -1,4 +1,4 @@
-package br.com.lion.garapa.Word;
+package br.com.lion.garapa.word;
 
 /**
  * Classe contendo todos os tipos de dados que usaremos
@@ -14,5 +14,8 @@ public class DataTypeWord {
 	public static final String INTEGER = "Integer";
 	
 	public static final String LIST = "List";
+	
+	public static final String VOID = "void";
+
 	
 }

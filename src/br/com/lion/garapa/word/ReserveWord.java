@@ -1,4 +1,4 @@
-package br.com.lion.garapa.Word;
+package br.com.lion.garapa.word;
 
 /**
  * Classe contendo todas as palavras reservadas
@@ -25,6 +25,11 @@ public class ReserveWord {
 	public static final String CLASS = "class";
 	
 	public static final String INTERFACE = "interface";
+	
+	public static final String THROWS = "throws";
+
+	public static final String EXCEPTION = "Exception";
+
 
 	
 

@@ -5,7 +5,7 @@ package br.com.lion.garapa.template;
  *
  */
 
-import br.com.lion.garapa.Word.AnnotationWord;
+import br.com.lion.garapa.word.AnnotationWord;
 
 public class ClassGeneric {
 	
@@ -18,6 +18,8 @@ public class ClassGeneric {
 	protected final String name_dao_impl_package = "daoImpl";
 	
 	protected final String name_model_package = "model";
+	
+	protected final String NAME_SERVICE_PACKAGE = "service";
 	
 	protected final String method_seacrh = "listar";
 	
