@@ -1,17 +1,20 @@
 package br.com.lion.garapa.template;
 
-import br.com.lion.Information.InformationAnnotation;
-import br.com.lion.Information.InformationClass;
-import br.com.lion.Information.InformationHibernate;
-import br.com.lion.Information.InformationImport;
-import br.com.lion.Information.InformationMethod;
-import br.com.lion.Information.InformationObject;
-import br.com.lion.Information.InformationSQL;
+import br.com.lion.Word.AnnotationWord;
+import br.com.lion.Word.ClassWord;
+import br.com.lion.Word.DataTypeWord;
+import br.com.lion.Word.HibernateWord;
+import br.com.lion.Word.ImportWord;
+import br.com.lion.Word.MethodWord;
+import br.com.lion.Word.ObjectWord;
+import br.com.lion.Word.ReserveWord;
+import br.com.lion.Word.SQLWord;
+import br.com.lion.Word.SpecialCharactersWord;
 import br.com.lion.garapa.util.AccessModifierType;
 import br.com.lion.garapa.util.HelperString;
 
 /**
- * CLASSE UTILIZADA PARA REALIZAR A IMPLEMENTAÇÇAO DA CLASSE DAOImpl
+ * CLASSE UTILIZADA PARA REALIZAR A IMPLEMENTAï¿½ï¿½AO DA CLASSE DAOImpl
  * @author alyssonnascimento
  * @since  01/03/2019
  */
@@ -54,48 +57,48 @@ public class ClassDAOImplTemplate  extends ClassGeneric{
 	private String createPreHeadClass(){
 		StringBuffer builder = new StringBuffer();
 		
-		//CRIAÇÃO DO PACOTE
-		builder.append(super.reservedWord_PACKAGE);
+		//CRIAï¿½ï¿½O DO PACOTE
+		builder.append(ReserveWord.PACKAGE);
 		builder.append(super.space);
 		builder.append(super.name_dao_impl_package);
-		builder.append(super.reserveWord_DOT_AND_COMMA);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
 
 		
 		//IMPORTACOES
-		builder.append(super.reservedWord_IMPORT);
+		builder.append(ReserveWord.IMPORT);
 		builder.append(super.space);
-		builder.append(InformationImport.JAVAX_PERSISTENCE_TYPEDQUERY);
-		builder.append(super.reserveWord_DOT_AND_COMMA);
+		builder.append(ImportWord.JAVAX_PERSISTENCE_TYPEDQUERY);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 		builder.append(super.lineJump);
 		
-		builder.append(super.reservedWord_IMPORT);
+		builder.append(ReserveWord.IMPORT);
 		builder.append(super.space);
-		builder.append(InformationImport.ORG_SPRING_FRAMEWORK_STEREOTYPE_REPOSITORY);
-		builder.append(super.reserveWord_DOT_AND_COMMA);
+		builder.append(ImportWord.ORG_SPRING_FRAMEWORK_STEREOTYPE_REPOSITORY);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 		builder.append(super.lineJump);
 		
-		builder.append(super.reservedWord_IMPORT);
+		builder.append(ReserveWord.IMPORT);
 		builder.append(super.space);
-		builder.append(InformationImport.ORG_SPRING_FRAMEWORK_TRANSACTION_ANNOTATION_TRANSACTIONAL);
-		builder.append(super.reserveWord_DOT_AND_COMMA);
+		builder.append(ImportWord.ORG_SPRING_FRAMEWORK_TRANSACTION_ANNOTATION_TRANSACTIONAL);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 		builder.append(super.lineJump);
 		
-		builder.append(super.reservedWord_IMPORT);
+		builder.append(ReserveWord.IMPORT);
 		builder.append(super.space);
 		builder.append(super.name_model_package);
-		builder.append(super.reserveWord_DOT);
+		builder.append(SpecialCharactersWord.DOT);
 		builder.append(this.className);
-		builder.append(super.reserveWord_DOT_AND_COMMA);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 		builder.append(super.lineJump);
 
-		builder.append(super.reservedWord_IMPORT);
+		builder.append(ReserveWord.IMPORT);
 		builder.append(super.space);
 		builder.append(super.name_dao_package);
-		builder.append(super.reserveWord_DOT);
+		builder.append(SpecialCharactersWord.DOT);
 		builder.append(this.className);
-		builder.append(super.reserveWord_DOT_AND_COMMA);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
 
@@ -111,31 +114,31 @@ public class ClassDAOImplTemplate  extends ClassGeneric{
 	 */
 	private String createHeadClass(){
 		StringBuffer builder = new StringBuffer();
-			builder.append(InformationHibernate.REPOSITORY);
+			builder.append(HibernateWord.REPOSITORY);
 			builder.append(super.lineJump);
-			builder.append(InformationHibernate.TRANSACTIONAL);
+			builder.append(HibernateWord.TRANSACTIONAL);
 			builder.append(super.lineJump);
 			builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
 			builder.append(super.space);
-			builder.append(super.reservedWord_CLASS);
+			builder.append(ReserveWord.CLASS);
 			builder.append(super.space);
 			builder.append(className + classDomain);
 			builder.append(super.space);
-			builder.append(super.reservedWord_EXTENDS);
+			builder.append(ReserveWord.EXTENDS);
 			builder.append(super.space);
 			builder.append(super.name_class_generic_dao);
-			builder.append(super.reserveWord_LESS_THAN);
+			builder.append(SpecialCharactersWord.LESS_THAN);
 			builder.append(this.className);
-			builder.append(super.reserveWord_COMMA);
-			builder.append(super.type_INTEGER);
-			builder.append(super.reserveWord_BIGGER_THAN);
+			builder.append(SpecialCharactersWord.COMMA);
+			builder.append(DataTypeWord.INTEGER);
+			builder.append(SpecialCharactersWord.BIGGER_THAN);
 			builder.append(super.space);
-			builder.append(super.reservedWord_IMPLEMENTS);
+			builder.append(ReserveWord.IMPLEMENTS);
 			builder.append(super.space);
 			builder.append(this.className);
 			builder.append(HelperString.upperAll(this.name_dao_package));
 			builder.append(super.space);
-			builder.append(super.reservedWord_BRACE_OPEN);
+			builder.append(SpecialCharactersWord.BRACE_OPEN);
 		return builder.toString();
 	}
 	
@@ -151,129 +154,129 @@ public class ClassDAOImplTemplate  extends ClassGeneric{
 			//DECLARACAO DA SOBREESCRITA
 			builder.append(super.lineJump);
 			builder.append(HelperString.spacingFirstLevel);
-			builder.append(InformationAnnotation.OVERRIDE);
+			builder.append(AnnotationWord.OVERRIDE);
 			
 			//DECLARACAO DO NOME DO METODO
 			builder.append(super.lineJump);
 			builder.append(HelperString.spacingFirstLevel);
 			builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
 			builder.append(super.space);
-			builder.append(super.type_LIST);
-			builder.append(super.reserveWord_LESS_THAN);
+			builder.append(DataTypeWord.LIST);
+			builder.append(SpecialCharactersWord.LESS_THAN);
 			builder.append(this.className);
-			builder.append(super.reserveWord_BIGGER_THAN);
+			builder.append(SpecialCharactersWord.BIGGER_THAN);
 			builder.append(super.space);
 			builder.append(super.method_seacrh);
-			builder.append(super.reservedWord_PARENTHESIS_OPEN);
-			builder.append(super.type_STRING);
+			builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+			builder.append(DataTypeWord.STRING);
 			builder.append(super.space);
 			builder.append(super.parameter_method_seacrh);
-			builder.append(super.reservedWord_PARENTHESIS_CLOSE);
-			builder.append(super.reservedWord_BRACE_OPEN);
+			builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+			builder.append(SpecialCharactersWord.BRACE_OPEN);
 			builder.append(super.lineJump);
 			builder.append(super.lineJump);
 			
 			// DECLARACAO DA VARIAVEL SB
 			builder.append(HelperString.spacingSecondLevel);
-			builder.append(super.reservedWord_FINAL);
+			builder.append(ReserveWord.FINAL);
 			builder.append(super.space);
-			builder.append(InformationClass.STRING_BUILDER_CLASS);
+			builder.append(ClassWord.STRING_BUILDER_CLASS);
 			builder.append(super.space);
-			builder.append(InformationClass.STRING_BUILDER_OBJECT_CLASS);
+			builder.append(ClassWord.STRING_BUILDER_OBJECT_CLASS);
 			builder.append(super.space);
-			builder.append(super.reserveWord_EQUALS);
+			builder.append(SpecialCharactersWord.EQUALS);
 			builder.append(super.space);
-			builder.append(super.reservedWord_NEW);
+			builder.append(ReserveWord.NEW);
 			builder.append(super.space);
-			builder.append(InformationClass.STRING_BUILDER_CLASS);
-			builder.append(super.reservedWord_PARENTHESIS_OPEN);
-			builder.append(super.reservedWord_PARENTHESIS_CLOSE);
-			builder.append(super.reserveWord_DOT_AND_COMMA);
+			builder.append(ClassWord.STRING_BUILDER_CLASS);
+			builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+			builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 			
 			//DECLARACAO DA VARIAVEL COND
 			builder.append(super.lineJump);
 			builder.append(HelperString.spacingSecondLevel);
-			builder.append(super.reservedWord_FINAL);
+			builder.append(ReserveWord.FINAL);
 			builder.append(super.space);
-			builder.append(InformationClass.STRING_BUILDER_CLASS);
+			builder.append(ClassWord.STRING_BUILDER_CLASS);
 			builder.append(super.space);
 			builder.append(this.nameCondMethodSearch);
 			builder.append(super.space);
-			builder.append(super.reserveWord_EQUALS);
+			builder.append(SpecialCharactersWord.EQUALS);
 			builder.append(super.space);
-			builder.append(super.reservedWord_NEW);
+			builder.append(ReserveWord.NEW);
 			builder.append(super.space);
-			builder.append(InformationClass.STRING_BUILDER_CLASS);
-			builder.append(super.reservedWord_PARENTHESIS_OPEN);
-			builder.append(super.reservedWord_PARENTHESIS_CLOSE);
-			builder.append(super.reserveWord_DOT_AND_COMMA);
+			builder.append(ClassWord.STRING_BUILDER_CLASS);
+			builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+			builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 			builder.append(super.lineJump);
 			builder.append(super.lineJump);
 			
 			//DECLARACAO DA CONSULTA SQL
 			builder.append(HelperString.spacingSecondLevel);
-			builder.append(InformationClass.STRING_BUILDER_OBJECT_CLASS);
-			builder.append(super.method_append);
-			builder.append(super.reservedWord_PARENTHESIS_OPEN);
-			builder.append(super.reserveWord_DOUBLE_SPACES);
-			builder.append(InformationSQL.SQL_SELECT);
+			builder.append(ClassWord.STRING_BUILDER_OBJECT_CLASS);
+			builder.append(MethodWord.APPEND);
+			builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+			builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+			builder.append(SQLWord.SQL_SELECT);
 			builder.append(super.space);
-			builder.append(InformationSQL.SQL_OBJ);
+			builder.append(SQLWord.SQL_OBJ);
 			builder.append(super.space);
-			builder.append(InformationSQL.SQL_FROM);
+			builder.append(SQLWord.SQL_FROM);
 			builder.append(super.space);
 			builder.append(this.className);
 			builder.append(super.space);
-			builder.append(InformationSQL.SQL_OBJ);
-			builder.append(super.reserveWord_DOUBLE_SPACES);
-			builder.append(super.reservedWord_PARENTHESIS_CLOSE);
+			builder.append(SQLWord.SQL_OBJ);
+			builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+			builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
 			builder.append(super.lineJump);
 			builder.append(super.lineJump);
 			
 			//DEFINICAO DO TYPED_QUERY
 			builder.append(HelperString.spacingSecondLevel);
-			builder.append(super.reservedWord_FINAL);
+			builder.append(ReserveWord.FINAL);
 			builder.append(super.space);
-			builder.append(InformationClass.TYPED_QUERY);
-			builder.append(super.reserveWord_LESS_THAN);
+			builder.append(ClassWord.TYPED_QUERY);
+			builder.append(SpecialCharactersWord.LESS_THAN);
 			builder.append(this.className);
-			builder.append(super.reserveWord_BIGGER_THAN);
+			builder.append(SpecialCharactersWord.BIGGER_THAN);
 			builder.append(super.space);
-			builder.append(InformationSQL.SQL_QUERY);
+			builder.append(SQLWord.SQL_QUERY);
 			builder.append(super.space);
-			builder.append(super.reserveWord_EQUALS);
+			builder.append(SpecialCharactersWord.EQUALS);
 			builder.append(super.space);
-			builder.append(InformationObject.ENTITY_MANAGER);
-			builder.append(super.reserveWord_DOT);
-			builder.append(InformationMethod.CREATE_QUERY);
-			builder.append(super.reservedWord_PARENTHESIS_OPEN);
-			builder.append(InformationClass.STRING_BUILDER_OBJECT_CLASS);
-			builder.append(super.reserveWord_DOT);
-			builder.append(InformationMethod.TO_STRING);
-			builder.append(super.reservedWord_PARENTHESIS_OPEN);
-			builder.append(super.reservedWord_PARENTHESIS_CLOSE);
-			builder.append(super.reserveWord_COMMA);
+			builder.append(ObjectWord.ENTITY_MANAGER);
+			builder.append(SpecialCharactersWord.DOT);
+			builder.append(MethodWord.CREATE_QUERY);
+			builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+			builder.append(ClassWord.STRING_BUILDER_OBJECT_CLASS);
+			builder.append(SpecialCharactersWord.DOT);
+			builder.append(MethodWord.TO_STRING);
+			builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+			builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+			builder.append(SpecialCharactersWord.COMMA);
 			builder.append(this.className);
-			builder.append(super.reserveWord_DOT);
-			builder.append(super.reservedWord_CLASS);
-			builder.append(super.reservedWord_PARENTHESIS_CLOSE);
-			builder.append(super.reserveWord_DOT_AND_COMMA);
+			builder.append(SpecialCharactersWord.DOT);
+			builder.append(ReserveWord.CLASS);
+			builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 			builder.append(super.lineJump);
 			builder.append(super.lineJump);
 
 			//DEFINICAO DO RETORNO
 			builder.append(HelperString.spacingSecondLevel);
-			builder.append(super.reservedWord_RETURN);
+			builder.append(ReserveWord.RETURN);
 			builder.append(super.space);
-			builder.append(InformationSQL.SQL_QUERY);
-			builder.append(super.reserveWord_DOT);
-			builder.append(InformationMethod.GET_RESULT_LIST);
-			builder.append(super.reservedWord_PARENTHESIS_OPEN);
-			builder.append(super.reservedWord_PARENTHESIS_CLOSE);
-			builder.append(super.reserveWord_DOT_AND_COMMA);
+			builder.append(SQLWord.SQL_QUERY);
+			builder.append(SpecialCharactersWord.DOT);
+			builder.append(MethodWord.GET_RESULT_LIST);
+			builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+			builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 			builder.append(super.lineJump);
 			builder.append(HelperString.spacingFirstLevel);
-			builder.append(super.reservedWord_BRACE_CLOSE);
+			builder.append(SpecialCharactersWord.BRACE_CLOSE);
 			builder.append(super.lineJump);
 
 			return builder.toString();
@@ -281,7 +284,7 @@ public class ClassDAOImplTemplate  extends ClassGeneric{
 	
 	private String createFotterClass(){
 		StringBuilder builder = new StringBuilder();
-			builder.append(super.reservedWord_BRACE_CLOSE);
+			builder.append(SpecialCharactersWord.BRACE_CLOSE);
 		return builder.toString();
 	}
 	

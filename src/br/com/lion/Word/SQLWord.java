@@ -1,6 +1,6 @@
-package br.com.lion.Information;
+package br.com.lion.Word;
 
-public class InformationSQL {
+public class SQLWord {
 
 	
 	public static final String SQL_SELECT = "select";

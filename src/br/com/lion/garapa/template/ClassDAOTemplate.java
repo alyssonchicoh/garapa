@@ -1,5 +1,9 @@
 package br.com.lion.garapa.template;
 
+import br.com.lion.Word.DataTypeWord;
+import br.com.lion.Word.ImportWord;
+import br.com.lion.Word.ReserveWord;
+import br.com.lion.Word.SpecialCharactersWord;
 import br.com.lion.garapa.model.Attribute;
 import br.com.lion.garapa.util.AccessModifierType;
 import br.com.lion.garapa.util.HelperString;
@@ -44,44 +48,43 @@ public class ClassDAOTemplate extends ClassGeneric {
 	 */
 	private String createHeadClass(){
 		StringBuilder builder = new StringBuilder();
-		builder.append(super.reservedWord_PACKAGE);
-		builder.append(super.space);
-		builder.append(super.name_dao_package);
-		builder.append(super.reserveWord_DOT_AND_COMMA);
-		builder.append(super.lineJump);
+			builder.append(ReserveWord.PACKAGE);
+			builder.append(super.space);
+			builder.append(super.name_dao_package);
+			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+			builder.append(super.lineJump);
 		
-		builder.append(super.reservedWord_IMPORT);
-		builder.append(super.space);
-		builder.append(super.import_java_util_list);
-		builder.append(super.reserveWord_DOT_AND_COMMA);
-		builder.append(super.lineJump);
-		builder.append(super.reservedWord_IMPORT);
-		builder.append(super.space);
-		builder.append(super.name_model_package);
-		builder.append(super.reserveWord_DOT);
-		builder.append(this.className);
-		builder.append(super.reserveWord_DOT_AND_COMMA);
+			builder.append(ReserveWord.IMPORT);
+			builder.append(super.space);
+			builder.append(ImportWord.JAVA_UTIL_LIST);
+			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+			builder.append(super.lineJump);
+			builder.append(ReserveWord.IMPORT);
+			builder.append(super.space);
+			builder.append(super.name_model_package);
+			builder.append(SpecialCharactersWord.DOT);
+			builder.append(this.className);
+			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+			builder.append(super.lineJump);
+			builder.append(super.lineJump);
 		
-		builder.append(super.lineJump);
-		builder.append(super.lineJump);
+			builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
+			builder.append(super.space);
+			builder.append(ReserveWord.INTERFACE);
+			builder.append(super.space);
+			builder.append(className + classDomain);
+			builder.append(super.space);
+			builder.append(ReserveWord.EXTENDS);
+			builder.append(super.space);
+			builder.append(super.name_class_generic_dao);
+			builder.append(SpecialCharactersWord.LESS_THAN);
+			builder.append(this.className);
+			builder.append(SpecialCharactersWord.COMMA);
+			builder.append(DataTypeWord.INTEGER);
+			builder.append(SpecialCharactersWord.BIGGER_THAN);
+			builder.append(SpecialCharactersWord.BRACE_OPEN);
 		
-		builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
-		builder.append(super.space);
-		builder.append(super.reservedWord_INTERFACE);
-		builder.append(super.space);
-		builder.append(className + classDomain);
-		builder.append(super.space);
-		builder.append(super.reservedWord_EXTENDS);
-		builder.append(super.space);
-		builder.append(super.name_class_generic_dao);
-		builder.append(super.reserveWord_LESS_THAN);
-		builder.append(this.className);
-		builder.append(super.reserveWord_COMMA);
-		builder.append(super.type_INTEGER);
-		builder.append(super.reserveWord_BIGGER_THAN);
-		builder.append(super.reservedWord_BRACE_OPEN);
-		
-		return builder.toString();
+			return builder.toString();
 	}
 	
 	/**
@@ -90,23 +93,23 @@ public class ClassDAOTemplate extends ClassGeneric {
 	 */
 	private String createBodyClass(){
 		StringBuilder builder = new StringBuilder();
-		builder.append(super.lineJump);
-		builder.append(super.lineJump);
-		builder.append(HelperString.spacingFirstLevel);
-		builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
-		builder.append(super.space);
-		builder.append(super.type_LIST);
-		builder.append(super.reserveWord_LESS_THAN);
-		builder.append(className);
-		builder.append(super.reserveWord_BIGGER_THAN);
-		builder.append(super.space);
-		builder.append(super.method_seacrh);
-		builder.append(super.reservedWord_PARENTHESIS_OPEN);
-		builder.append(super.type_STRING);
-		builder.append(super.space);
-		builder.append(super.parameter_method_seacrh);
-		builder.append(super.reservedWord_PARENTHESIS_CLOSE);
-		builder.append(super.reserveWord_DOT_AND_COMMA);
+			builder.append(super.lineJump);
+			builder.append(super.lineJump);
+			builder.append(HelperString.spacingFirstLevel);
+			builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
+			builder.append(super.space);
+			builder.append(DataTypeWord.LIST);
+			builder.append(SpecialCharactersWord.LESS_THAN);
+			builder.append(className);
+			builder.append(SpecialCharactersWord.BIGGER_THAN);
+			builder.append(super.space);
+			builder.append(super.method_seacrh);
+			builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+			builder.append(DataTypeWord.STRING);
+			builder.append(super.space);
+			builder.append(super.parameter_method_seacrh);
+			builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 		return builder.toString();
 	}
 	
@@ -117,7 +120,7 @@ public class ClassDAOTemplate extends ClassGeneric {
 	private String createFotterClass(){
 		StringBuilder builder = new StringBuilder();
 		builder.append(super.lineJump);
-		builder.append(super.reservedWord_BRACE_CLOSE);
+		builder.append(SpecialCharactersWord.BRACE_CLOSE);
 		return builder.toString();
 	}
 	

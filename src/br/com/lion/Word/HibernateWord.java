@@ -1,11 +1,11 @@
-package br.com.lion.Information;
+package br.com.lion.Word;
 
 /**
  * INFORMACOES SOBRE AS PALAVRAS RESERVADAS DO HIBERNATE
  * @author alyssonnascimento
  * @since 01/03/2019
  */
-public class InformationHibernate {
+public class HibernateWord {
 
 	public static final String TRANSACTIONAL = "@Transactional";
 	public static final String REPOSITORY = "@Repository";

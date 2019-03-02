@@ -1,11 +1,11 @@
-package br.com.lion.Information;
+package br.com.lion.Word;
 
 /**
  * Informacoes sobre classes 
  * @author alyssonnascimento
  *
  */
-public class InformationObject {
+public class ObjectWord {
 
 	public static final String ENTITY_MANAGER = "entityManager";
 

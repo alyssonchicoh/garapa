@@ -1,11 +1,11 @@
-package br.com.lion.Information;
+package br.com.lion.Word;
 
 /**
  * Informacoes sobre classes 
  * @author alyssonnascimento
- *
+ * @since 01/03/2019
  */
-public class InformationClass {
+public class ClassWord {
 
 	public static final String STRING_BUILDER_CLASS = "StringBuilder";
 	public static final String STRING_BUILDER_OBJECT_CLASS = "sb";
