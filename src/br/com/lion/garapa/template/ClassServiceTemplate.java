@@ -7,11 +7,10 @@ public class ClassServiceTemplate implements IClassTemplate{
 		// TODO Auto-generated method stub
 		
 	}
-	
 
 	@Override
 	public String createPreHeadClass() {
-		// TODO Auto-generated method stub
+		StringBuilder builder = new StringBuilder();
 		return null;
 	}
 
