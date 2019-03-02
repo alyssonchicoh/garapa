@@ -1,4 +1,4 @@
-package br.com.lion.Word;
+package br.com.lion.garapa.Word;
 
 /**
  * INFORMACOES SOBRE AS PALAVRAS RESERVADAS DO HIBERNATE

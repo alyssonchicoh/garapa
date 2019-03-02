@@ -1,4 +1,4 @@
-package br.com.lion.Word;
+package br.com.lion.garapa.Word;
 
 /**
  * Classe contendo todos os caracteres especiais usados no template

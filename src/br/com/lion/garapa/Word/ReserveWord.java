@@ -1,4 +1,4 @@
-package br.com.lion.Word;
+package br.com.lion.garapa.Word;
 
 /**
  * Classe contendo todas as palavras reservadas

@@ -1,4 +1,4 @@
-package br.com.lion.Word;
+package br.com.lion.garapa.Word;
 
 /**
  * Aqui definimos todas as informacoes de importacoes da classes

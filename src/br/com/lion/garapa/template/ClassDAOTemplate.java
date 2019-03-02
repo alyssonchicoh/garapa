@@ -1,9 +1,9 @@
 package br.com.lion.garapa.template;
 
-import br.com.lion.Word.DataTypeWord;
-import br.com.lion.Word.ImportWord;
-import br.com.lion.Word.ReserveWord;
-import br.com.lion.Word.SpecialCharactersWord;
+import br.com.lion.garapa.Word.DataTypeWord;
+import br.com.lion.garapa.Word.ImportWord;
+import br.com.lion.garapa.Word.ReserveWord;
+import br.com.lion.garapa.Word.SpecialCharactersWord;
 import br.com.lion.garapa.model.Attribute;
 import br.com.lion.garapa.util.AccessModifierType;
 import br.com.lion.garapa.util.HelperString;

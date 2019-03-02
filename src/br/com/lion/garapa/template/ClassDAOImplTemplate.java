@@ -1,15 +1,15 @@
 package br.com.lion.garapa.template;
 
-import br.com.lion.Word.AnnotationWord;
-import br.com.lion.Word.ClassWord;
-import br.com.lion.Word.DataTypeWord;
-import br.com.lion.Word.HibernateWord;
-import br.com.lion.Word.ImportWord;
-import br.com.lion.Word.MethodWord;
-import br.com.lion.Word.ObjectWord;
-import br.com.lion.Word.ReserveWord;
-import br.com.lion.Word.SQLWord;
-import br.com.lion.Word.SpecialCharactersWord;
+import br.com.lion.garapa.Word.AnnotationWord;
+import br.com.lion.garapa.Word.ClassWord;
+import br.com.lion.garapa.Word.DataTypeWord;
+import br.com.lion.garapa.Word.HibernateWord;
+import br.com.lion.garapa.Word.ImportWord;
+import br.com.lion.garapa.Word.MethodWord;
+import br.com.lion.garapa.Word.ObjectWord;
+import br.com.lion.garapa.Word.ReserveWord;
+import br.com.lion.garapa.Word.SQLWord;
+import br.com.lion.garapa.Word.SpecialCharactersWord;
 import br.com.lion.garapa.util.AccessModifierType;
 import br.com.lion.garapa.util.HelperString;
 

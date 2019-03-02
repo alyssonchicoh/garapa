@@ -5,7 +5,7 @@ package br.com.lion.garapa.template;
  *
  */
 
-import br.com.lion.Word.AnnotationWord;
+import br.com.lion.garapa.Word.AnnotationWord;
 
 public class ClassGeneric {
 	
