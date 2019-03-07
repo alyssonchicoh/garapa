@@ -74,10 +74,7 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 			builder.append(ImportWord.ORG_SPRING_FRAMEWORK_TRANSACTION_ANNOTATION_TRANSACTIONAL);
 			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 			builder.append(super.lineJump);
-			
-
 			builder.append(super.lineJump);
-			
 			//IMPORT MODEL
 			builder.append(ReserveWord.IMPORT);
 			builder.append(super.space);
@@ -86,7 +83,6 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 			builder.append(className);
 			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 			builder.append(super.lineJump);
-			
 			//IMPORT DAO
 			builder.append(ReserveWord.IMPORT);
 			builder.append(super.space);
@@ -95,7 +91,6 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 			builder.append(className);
 			builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 			builder.append(super.lineJump);
-			
 			//IMPORT SERVICE DA ENTITY
 			builder.append(ReserveWord.IMPORT);
 			builder.append(super.space);
@@ -131,8 +126,6 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 			builder.append(super.lineJump);
 			builder.append(super.lineJump);
 		return builder.toString();
-
-		
 	}
 
 	@Override
@@ -150,8 +143,10 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);		
-
 		//DEFINIÇÃO DO CONSTRUTOR DA CLASSE
+		builder.append(HelperString.spacingSecondLevel);
+		builder.append(AnnotationWord.AUTOWIRED);
+		builder.append(super.lineJump);		
 		builder.append(HelperString.spacingSecondLevel);
 		builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
 		builder.append(super.space);
@@ -166,13 +161,11 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 		builder.append(SpecialCharactersWord.BRACE_OPEN);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
-
 		builder.append(HelperString.spacingTHIRDLevel);
 		builder.append(ReserveWord.THIS);
 		builder.append(SpecialCharactersWord.DOT);
 		builder.append(ObjectWord.DAO);
 		builder.append(super.space);
-
 		builder.append(SpecialCharactersWord.EQUALS);
 		builder.append(super.space);
 		builder.append(ObjectWord.DAO);
@@ -182,10 +175,12 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 		builder.append(SpecialCharactersWord.BRACE_CLOSE);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
-
-
-		
 		builder.append(HelperString.spacingSecondLevel);
+		//METODO SALVAR
+		builder.append(AnnotationWord.OVERRIDE);
+		builder.append(super.lineJump);
+		builder.append(HelperString.spacingSecondLevel);
+
 		builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
 		builder.append(super.space);
 		builder.append(this.className);
@@ -203,12 +198,27 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 		builder.append(SpecialCharactersWord.BRACE_OPEN);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
+		builder.append(HelperString.spacingTHIRDLevel);
+		builder.append(ReserveWord.RETURN);
+		builder.append(super.space);
+		builder.append(ObjectWord.DAO);
+		builder.append(SpecialCharactersWord.DOT);
+		builder.append(MethodInTemplateWord.SAVE);
+		builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+		builder.append(SQLWord.SQL_OBJ);
+		builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+		builder.append(super.lineJump);
 		builder.append(HelperString.spacingSecondLevel);
 		builder.append(SpecialCharactersWord.BRACE_CLOSE);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
 		//DEFINICAO DO METODO DE ALTERAR
 		builder.append(HelperString.spacingSecondLevel);
+		builder.append(AnnotationWord.OVERRIDE);
+		builder.append(super.lineJump);
+		builder.append(HelperString.spacingSecondLevel);
+
 		builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
 		builder.append(super.space);
 		builder.append(this.className);
@@ -226,12 +236,27 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 		builder.append(SpecialCharactersWord.BRACE_OPEN);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
+		builder.append(HelperString.spacingTHIRDLevel);
+		builder.append(ReserveWord.RETURN);
+		builder.append(super.space);
+		builder.append(ObjectWord.DAO);
+		builder.append(SpecialCharactersWord.DOT);
+		builder.append(MethodInTemplateWord.UPDATE);
+		builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+		builder.append(SQLWord.SQL_OBJ);
+		builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+		builder.append(super.lineJump);
 		builder.append(HelperString.spacingSecondLevel);
 		builder.append(SpecialCharactersWord.BRACE_CLOSE);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
 		//DEFINICAO DO METODO DE REMOVER
 		builder.append(HelperString.spacingSecondLevel);
+		builder.append(AnnotationWord.OVERRIDE);
+		builder.append(super.lineJump);
+		builder.append(HelperString.spacingSecondLevel);
+
 		builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
 		builder.append(super.space);
 		builder.append(DataTypeWord.VOID);
@@ -249,12 +274,27 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 		builder.append(SpecialCharactersWord.BRACE_OPEN);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
+		builder.append(HelperString.spacingTHIRDLevel);
+		
+		builder.append(ObjectWord.DAO);
+		builder.append(SpecialCharactersWord.DOT);
+		builder.append(MethodInTemplateWord.DELETE);
+		builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+		builder.append(SQLWord.SQL_OBJ);
+		builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+		builder.append(super.lineJump);
+
 		builder.append(HelperString.spacingSecondLevel);
 		builder.append(SpecialCharactersWord.BRACE_CLOSE);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
 		//DEFINICAO DO METODO DE BUSCAR POR ID
 		builder.append(HelperString.spacingSecondLevel);
+		builder.append(AnnotationWord.OVERRIDE);
+		builder.append(super.lineJump);
+		builder.append(HelperString.spacingSecondLevel);
+
 		builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
 		builder.append(super.space);
 		builder.append(this.className);
@@ -270,14 +310,32 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 		builder.append(super.space);
 		builder.append(ReserveWord.EXCEPTION);
 		builder.append(SpecialCharactersWord.BRACE_OPEN);
+		
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
+		builder.append(HelperString.spacingTHIRDLevel);
+
+		builder.append(ReserveWord.RETURN);
+		builder.append(super.space);
+		builder.append(ObjectWord.DAO);
+		builder.append(SpecialCharactersWord.DOT);
+		builder.append(MethodInTemplateWord.SEARCH_BY_ID);
+		builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+		builder.append(SQLWord.SQL_ID);
+		builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+		builder.append(super.lineJump);
+
 		builder.append(HelperString.spacingSecondLevel);
 		builder.append(SpecialCharactersWord.BRACE_CLOSE);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
 		//DEFINICAO DO METODO DE BUSCAR TODOS
 		builder.append(HelperString.spacingSecondLevel);
+		builder.append(AnnotationWord.OVERRIDE);
+		builder.append(super.lineJump);
+		builder.append(HelperString.spacingSecondLevel);
+
 		builder.append(AccessModifierType.ACCESS_MODIFIER_PUBLIC);
 		builder.append(super.space);
 		builder.append(DataTypeWord.LIST);
@@ -298,6 +356,18 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 		builder.append(SpecialCharactersWord.BRACE_OPEN);
 		builder.append(super.lineJump);
 		builder.append(super.lineJump);
+		builder.append(HelperString.spacingTHIRDLevel);
+
+		builder.append(ReserveWord.RETURN);
+		builder.append(super.space);
+		builder.append(ObjectWord.DAO);
+		builder.append(SpecialCharactersWord.DOT);
+		builder.append(MethodInTemplateWord.SEARCH);
+		builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+		builder.append(SQLWord.SQL_QUERY);
+		builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+		builder.append(super.lineJump);
 		builder.append(HelperString.spacingSecondLevel);
 		builder.append(SpecialCharactersWord.BRACE_CLOSE);
 		builder.append(super.lineJump);
@@ -307,8 +377,10 @@ public class ClassServiceImplTemplate extends ClassGeneric implements IClassTemp
 
 	@Override
 	public String createFotterClass() {
-		// TODO Auto-generated method stub
-		return null;
+		StringBuilder builder = new StringBuilder();
+			builder.append(super.lineJump);
+			builder.append(SpecialCharactersWord.BRACE_CLOSE);
+	return builder.toString();	
 	}
 
 }
