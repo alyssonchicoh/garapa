@@ -15,11 +15,14 @@ public class ClassGeneric {
 	
 	protected final String name_dao_package = "dao";
 	
-	protected final String name_dao_impl_package = "daoImpl";
+	protected final String name_dao_impl_package = "dao.impl";
 	
 	protected final String name_model_package = "model";
 	
 	protected final String NAME_SERVICE_PACKAGE = "service";
+	
+	protected final String NAME_SERVICE_IMPL_PACKAGE = "service.impl";
+
 	
 	protected final String method_seacrh = "listar";
 	

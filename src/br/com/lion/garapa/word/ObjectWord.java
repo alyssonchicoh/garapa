@@ -8,6 +8,8 @@ package br.com.lion.garapa.word;
 public class ObjectWord {
 
 	public static final String ENTITY_MANAGER = "entityManager";
+	public static final String DAO = "dao";
+
 
 
 

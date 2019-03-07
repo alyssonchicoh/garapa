@@ -9,6 +9,7 @@ public class HelperString {
 	
 	public static String spacingFirstLevel = "	"; 
 	public static String spacingSecondLevel = "		"; 
+	public static String spacingTHIRDLevel = "			"; 
 
 
 	/**

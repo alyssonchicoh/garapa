@@ -1,7 +1,5 @@
 package br.com.lion.garapa.template;
 
-import java.nio.file.attribute.AclEntry.Builder;
-
 import br.com.lion.garapa.util.AccessModifierType;
 import br.com.lion.garapa.util.HelperString;
 import br.com.lion.garapa.word.DataTypeWord;
