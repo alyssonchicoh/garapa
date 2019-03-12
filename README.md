@@ -9,6 +9,9 @@ Esse projeto tem como objetivo principal, implementar um gerador de código, aut
 - PHP
 - Python
 - JavaScript
+# Padrão MVC utilizado pelo Garapa
+
+![](https://uploaddeimagens.com.br/images/001/954/886/full/68747470733a2f2f692e696d6775722e636f6d2f5065664d7832512e706e67.png?1552399146)
 
 # Comandos
 
