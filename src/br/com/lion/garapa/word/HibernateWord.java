@@ -1,5 +1,6 @@
 package br.com.lion.garapa.word;
 
+
 /**
  * INFORMACOES SOBRE AS PALAVRAS RESERVADAS DO HIBERNATE
  * @author alyssonnascimento
@@ -75,4 +76,47 @@ public class HibernateWord {
 	 */
 	public static final String SEQUENCE_GENERATOR_INITIAL_VALUE = "initialValue";
 	
+	/**
+	 * ANOTA플O USADA NO MODELO PARA GERAR A SEQUENCIA
+	 */
+	public static final String GENERATED_VALUE = "@GeneratedValue";
+
+	/**
+	 * ANOTA플O USADA NO MODELO PARA GERAR O PARAMETRO DE GENERATED_VALOR
+	 */
+	public static final String GENERATED_VALUE_GENERATOR = "generator";
+	
+	/**
+	 * ANOTA플O USADA NO MODELO PARA GERAR O PARAMETRO DE GENERATED_VALOR
+	 */
+	public static final String GENERATED_VALUE_STRATEGY = "strategy";
+	
+	
+	/**
+	 * ANOTA플O USADA NO MODELO PARA GERAR O PARAMETRO DE GENERATED_VALOR
+	 */
+	public static final String GENERATED_VALUE_GENERATION_TYPE = "GenerationType";
+
+	
+	/**
+	 * ANOTA플O USADA NO MODELO PARA GERAR O PARAMETRO DE GENERATED_VALOR
+	 */
+	public static final String GENERATED_VALUE_SEQUENCE = "SEQUENCE";
+
+	/**
+	 * REPRESENTA UMA STRING PARA IDENDIFICAR A CHAVE PRIMARIA
+	 */
+	public static final String COD_ID_PK = "_cod_id_pk";
+	
+	/**
+	 * REPRESENTA UMA STRING PARA IDENDIFICAR  A CHAVE ESTRANGEIRA
+	 */
+	
+	public static final String COD_ID_FK = "_cod_id_fk";
+	
+	/**
+	 * REPRESENTA UMA STRING PARA IDENDIFICAR O NOME DA SEQUENCIA
+	 */
+	public static final String SEQ = "seq_";
+
 }

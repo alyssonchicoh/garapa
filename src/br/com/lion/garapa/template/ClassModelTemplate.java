@@ -2,10 +2,16 @@ package br.com.lion.garapa.template;
 
 import java.util.List;
 
+import br.com.lion.garapa.enums.Numbers;
 import br.com.lion.garapa.model.Attribute;
+import br.com.lion.garapa.model.ClassName;
 import br.com.lion.garapa.util.AccessModifierType;
+import br.com.lion.garapa.util.HelperString;
 import br.com.lion.garapa.word.ClassWord;
+import br.com.lion.garapa.word.DataTypeWord;
 import br.com.lion.garapa.word.HibernateWord;
+import br.com.lion.garapa.word.NumbersWord;
+import br.com.lion.garapa.word.ObjectWord;
 import br.com.lion.garapa.word.ReserveWord;
 import br.com.lion.garapa.word.SpecialCharactersWord;
 
@@ -17,7 +23,8 @@ import br.com.lion.garapa.word.SpecialCharactersWord;
  */
 public class ClassModelTemplate extends ClassGeneric implements IClassTemplate{
 
-	private String className;
+	private ClassName className;
+	
 	
 	private List<Attribute> attributes;
 	
@@ -27,7 +34,7 @@ public class ClassModelTemplate extends ClassGeneric implements IClassTemplate{
 	}
 	
 	public ClassModelTemplate(String className,List<Attribute> attributes) {
-		this.className = className;
+		this.className = new ClassName(className);
 		this.attributes = attributes;
 	}
 	
@@ -36,6 +43,9 @@ public class ClassModelTemplate extends ClassGeneric implements IClassTemplate{
 		StringBuilder builder = new StringBuilder();
 		builder.append(createPreHeadClass());
 		builder.append(createHeadClass());
+		builder.append(createBodyClass());
+
+		
 
 		
 		System.out.println(builder.toString());
@@ -67,7 +77,7 @@ public class ClassModelTemplate extends ClassGeneric implements IClassTemplate{
 		builder.append(SpecialCharactersWord.EQUALS);
 		builder.append(super.space);
 		builder.append(SpecialCharactersWord.DOUBLE_SPACES);
-		builder.append(this.className);
+		builder.append(this.className.toString());
 		builder.append(SpecialCharactersWord.DOUBLE_SPACES);
 		builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
 		
@@ -76,22 +86,107 @@ public class ClassModelTemplate extends ClassGeneric implements IClassTemplate{
 		builder.append(super.space);
 		builder.append(ReserveWord.CLASS);
 		builder.append(super.space);
-		builder.append(this.className);
+		builder.append(this.className.toString());
 		builder.append(super.space);
 
 		builder.append(ReserveWord.EXTENDS);
 		builder.append(super.space);
 		builder.append(ClassWord.PERSISTENTE_ENTITY_IMPL);
 		builder.append(SpecialCharactersWord.BRACE_OPEN);
-
+		builder.append(super.lineJump);
+		builder.append(super.lineJump);
 
 		return builder.toString();
 	}
 
 	@Override
 	public String createBodyClass() {
-		// TODO Auto-generated method stub
-		return null;
+		StringBuilder builder = new StringBuilder();
+		builder.append(HelperString.spacingFirstLevel);
+		builder.append(HibernateWord.ID);
+		builder.append(super.lineJump);
+		
+		builder.append(HelperString.spacingFirstLevel);
+		builder.append(HibernateWord.COLUMN);
+		builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+		builder.append(HibernateWord.COLUMN_NAME);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.EQUALS);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+		builder.append(this.className.getClassNameSmall() + HibernateWord.COD_ID_PK);
+		builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+		builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+
+		builder.append(super.lineJump);
+		builder.append(HelperString.spacingFirstLevel);
+		builder.append(HibernateWord.SEQUENCE_GENERATOR);
+		builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+		builder.append(HibernateWord.SEQUENCE_GENERATOR_NAME);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.EQUALS);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+		builder.append(HibernateWord.SEQ + className.getClassNameLower());
+		builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+		builder.append(SpecialCharactersWord.COMMA);
+		builder.append(super.space);
+		builder.append(HibernateWord.SEQUENCE_GENERATOR__SEQUENCE_NAME);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.EQUALS);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+		builder.append(HibernateWord.SEQ + className.getClassNameLower());
+		builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+		builder.append(super.space);
+		builder.append(HibernateWord.SEQUENCE_GENERATOR_ALLOCATION_SIZE);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.EQUALS);
+		builder.append(super.space);
+		builder.append(NumbersWord.ONE);
+		builder.append(SpecialCharactersWord.COMMA);
+
+		builder.append(super.space);
+		builder.append(HibernateWord.SEQUENCE_GENERATOR_INITIAL_VALUE);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.EQUALS);
+		builder.append(super.space);
+		builder.append(NumbersWord.ONE);
+		builder.append(super.lineJump);
+		
+		builder.append(HelperString.spacingFirstLevel);
+		builder.append(HibernateWord.GENERATED_VALUE);
+		builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+		builder.append(HibernateWord.GENERATED_VALUE_GENERATOR);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.EQUALS);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+		builder.append(HibernateWord.SEQ + className.getClassNameLower());
+		builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+		builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+		
+		builder.append(SpecialCharactersWord.COMMA);
+		builder.append(super.space);
+
+		builder.append(HibernateWord.GENERATED_VALUE_STRATEGY);
+		builder.append(super.space);
+		builder.append(SpecialCharactersWord.EQUALS);
+		builder.append(super.space);
+		builder.append(HibernateWord.GENERATED_VALUE_GENERATION_TYPE);
+		builder.append(SpecialCharactersWord.DOT);
+		builder.append(HibernateWord.GENERATED_VALUE_SEQUENCE);
+		builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);
+		builder.append(super.lineJump);
+		builder.append(HelperString.spacingFirstLevel);
+		
+		builder.append(AccessModifierType.ACCESS_MODIFIER_PRIVATE);
+		builder.append(super.space);
+		builder.append(DataTypeWord.INTEGER);
+		builder.append(super.space);
+		builder.append(ObjectWord.ID);
+		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+		return builder.toString();
 	}
 
 	@Override
