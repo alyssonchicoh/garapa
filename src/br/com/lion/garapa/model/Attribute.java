@@ -1,5 +1,6 @@
 package br.com.lion.garapa.model;
 
+import br.com.lion.garapa.enums.TypeAttribute;
 import br.com.lion.garapa.util.GetAndSetGenerator;
 
 /**
@@ -18,7 +19,7 @@ public class Attribute {
 	/**
 	 * REPRESENTA O TIPO DO ATRIBUTO
 	 */
-	private String type;
+	private String dataType;
 	
 	/**
 	 * REPRESENTA O NOME DO ATRIBUTO
@@ -35,14 +36,20 @@ public class Attribute {
 	 */
 	private String set;
 	
+	/**
+	 * REPRESENTA O TIPO DO ATRIBUTO REFERENTE A QUESTÃO DA ANOTAÇÕES DO HIBERNATE
+	 */
+	private Enum<TypeAttribute> type;
+	
 	public Attribute(){
 		
 	}
 	
-	public Attribute(String accessModifier,String type,String name){
+	public Attribute(String accessModifier,String dataType,String name,Enum<TypeAttribute> type){
 		this.accessModifier = accessModifier;
-		this.type = type;
+		this.dataType = dataType;
 		this.name = name;
+		this.type = type;
 		this.get = GetAndSetGenerator.generatorGet(this);
 		this.set = GetAndSetGenerator.generatorSet(this);
 	}
@@ -52,12 +59,22 @@ public class Attribute {
 		return this.accessModifier + " " + this.type + " "+this.name + ";";
 	}
 	
-	public String getType() {
+	public String getDataType() {
+		return dataType;
+	}
+
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
+	}
+	
+	public Enum<TypeAttribute> getType() {
 		return type;
 	}
-	public void setType(String type) {
+
+	public void setType(Enum<TypeAttribute> type) {
 		this.type = type;
 	}
+
 	public String getName() {
 		return name;
 	}

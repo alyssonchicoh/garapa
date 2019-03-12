@@ -33,7 +33,7 @@ public class GetAndSetGenerator {
 	public static String generatorSet(Attribute attribute){
 		StringBuilder builder = new StringBuilder();
 		//PUBLIC STRING getPessoa(){
-		builder.append(HelperString.spacingFirstLevel +"public void set"+HelperString.upperFirst(attribute.getName()) + "("+HelperString.upperFirst(attribute.getType()) + " " + HelperString.lowwerAll(attribute.getName()) +"){");
+		builder.append(HelperString.spacingFirstLevel +"public void set"+HelperString.upperFirst(attribute.getName()) + "("+HelperString.upperFirst(attribute.getDataType()) + " " + HelperString.lowwerAll(attribute.getName()) +"){");
 		builder.append("\n");
 		builder.append(HelperString.spacingSecondLevel +"this."+HelperString.lowwerAll(attribute.getName()) +" = "+HelperString.lowwerAll(attribute.getName() +";"));
 		builder.append("\n");
