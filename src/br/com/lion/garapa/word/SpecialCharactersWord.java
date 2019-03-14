@@ -29,5 +29,9 @@ public class SpecialCharactersWord {
 	public static final String EQUALS = "=";
 
 	public static final String DOUBLE_SPACES = "\"";
+	
+	public static final String UNDERLINE = "_";
+
+	
 
 }

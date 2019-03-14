@@ -1,10 +1,13 @@
 package br.com.lion.garapa.template;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.lion.garapa.enums.Numbers;
 import br.com.lion.garapa.model.Attribute;
+import br.com.lion.garapa.model.AttributeTypeComplex;
 import br.com.lion.garapa.model.ClassName;
+import br.com.lion.garapa.model.AttributeTypeSimple;
 import br.com.lion.garapa.util.AccessModifierType;
 import br.com.lion.garapa.util.HelperString;
 import br.com.lion.garapa.word.ClassWord;
@@ -29,7 +32,18 @@ public class ClassModelTemplate extends ClassGeneric implements IClassTemplate{
 	private List<Attribute> attributes;
 	
 	public static void main(String[] args) {
-		ClassModelTemplate model = new ClassModelTemplate("Pessoa",null);
+		List<Attribute> lista = new ArrayList<Attribute>();
+		Attribute t1 = new Attribute(new AttributeTypeSimple(DataTypeWord.STRING, "nome"));
+		Attribute t2 = new Attribute(new AttributeTypeSimple(DataTypeWord.STRING, "endereco"));
+		Attribute t3 = new Attribute(new AttributeTypeSimple(DataTypeWord.STRING, "cpf"));
+
+		
+		lista.add(t1);
+		lista.add(t2);
+		lista.add(t3);
+
+
+		ClassModelTemplate model = new ClassModelTemplate("Pessoa",lista);
 		model.createClass();
 	}
 	
@@ -186,6 +200,9 @@ public class ClassModelTemplate extends ClassGeneric implements IClassTemplate{
 		builder.append(super.space);
 		builder.append(ObjectWord.ID);
 		builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+		builder.append(super.lineJump);
+		builder.append(super.lineJump);
+		builder.append(createAttributeForClass());
 		return builder.toString();
 	}
 
@@ -195,6 +212,46 @@ public class ClassModelTemplate extends ClassGeneric implements IClassTemplate{
 		return null;
 	}
 	
-	
+	private String createAttributeForClass(){
+		StringBuilder builder = new StringBuilder();
+			
+		for (Attribute attribute : attributes) {
+		
+			if(attribute.getAttributeType() instanceof AttributeTypeSimple){
+				builder.append(HelperString.spacingFirstLevel);
+				builder.append(HibernateWord.COLUMN);
+				builder.append(SpecialCharactersWord.PARENTHESIS_OPEN);
+				builder.append(HibernateWord.COLUMN_NAME);
+				builder.append(super.space);
+				builder.append(SpecialCharactersWord.EQUALS);
+				builder.append(super.space);
+				builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+				builder.append(className.getClassNameSmall());
+				builder.append(SpecialCharactersWord.UNDERLINE);
+				builder.append(HelperString.lowwerAll(attribute.getAttributeType().getName()));
+				builder.append(SpecialCharactersWord.DOUBLE_SPACES);
+				builder.append(SpecialCharactersWord.PARENTHESIS_CLOSE);	
+				builder.append(super.lineJump);
+				builder.append(HelperString.spacingFirstLevel);
+				builder.append(AccessModifierType.ACCESS_MODIFIER_PRIVATE);
+				builder.append(super.space);
+				builder.append(attribute.getAttributeType().getType());
+				builder.append(super.space);
+				builder.append(HelperString.lowwerAll(attribute.getAttributeType().getName()));
+				builder.append(SpecialCharactersWord.DOT_AND_COMMA);
+				builder.append(super.lineJump);
+				builder.append(super.lineJump);
+
+
+
+
+			}else if(attribute.getAttributeType() instanceof AttributeTypeComplex){
+				
+			}
+		}
+		
+		return builder.toString();
+
+	}
 	
 }

@@ -1,6 +1,6 @@
 package br.com.lion.garapa.model;
 
-import br.com.lion.garapa.enums.TypeAttribute;
+import br.com.lion.garapa.util.AccessModifierType;
 import br.com.lion.garapa.util.GetAndSetGenerator;
 
 /**
@@ -11,20 +11,13 @@ import br.com.lion.garapa.util.GetAndSetGenerator;
  */
 public class Attribute {
 	
-	/**
-	 * REPRESENTA O MODIFICADOR DE ACESSO
-	 */
-	private String accessModifier;
 	
 	/**
 	 * REPRESENTA O TIPO DO ATRIBUTO
 	 */
-	private String dataType;
+	private AttributeType attributeType;
 	
-	/**
-	 * REPRESENTA O NOME DO ATRIBUTO
-	 */
-	private String name;
+	
 	
 	/**
 	 * REPRESENTA O MÉTODO GET DO ATRIBUTO
@@ -36,71 +29,46 @@ public class Attribute {
 	 */
 	private String set;
 	
-	/**
-	 * REPRESENTA O TIPO DO ATRIBUTO REFERENTE A QUESTÃO DA ANOTAÇÕES DO HIBERNATE
-	 */
-	private Enum<TypeAttribute> type;
-	
 	public Attribute(){
 		
 	}
 	
-	public Attribute(String accessModifier,String dataType,String name,Enum<TypeAttribute> type){
-		this.accessModifier = accessModifier;
-		this.dataType = dataType;
-		this.name = name;
-		this.type = type;
+	public Attribute(AttributeType attributeType){
+		this.attributeType = attributeType;
 		this.get = GetAndSetGenerator.generatorGet(this);
 		this.set = GetAndSetGenerator.generatorSet(this);
 	}
 	
 	@Override
 	public String toString() {
-		return this.accessModifier + " " + this.type + " "+this.name + ";";
-	}
-	
-	public String getDataType() {
-		return dataType;
+		return AccessModifierType.ACCESS_MODIFIER_PRIVATE +" " +attributeType.getType() + " "+attributeType.getName();
 	}
 
-	public void setDataType(String dataType) {
-		this.dataType = dataType;
-	}
-	
-	public Enum<TypeAttribute> getType() {
-		return type;
+	public AttributeType getAttributeType() {
+		return attributeType;
 	}
 
-	public void setType(Enum<TypeAttribute> type) {
-		this.type = type;
+	public void setAttributeType(AttributeType attributeType) {
+		this.attributeType = attributeType;
 	}
 
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public String getGet() {
 		return get;
 	}
+
 	public void setGet(String get) {
 		this.get = get;
 	}
+
 	public String getSet() {
 		return set;
 	}
+
 	public void setSet(String set) {
 		this.set = set;
 	}
-
-	public String getAccessModifier() {
-		return accessModifier;
-	}
-
-	public void setAccessModifier(String accessModifier) {
-		this.accessModifier = accessModifier;
-	}
+	
+	
 	
 	
 	

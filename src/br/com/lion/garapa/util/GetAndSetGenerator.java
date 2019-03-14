@@ -20,9 +20,9 @@ public class GetAndSetGenerator {
 	public static String generatorGet(Attribute attribute){
 		StringBuilder builder = new StringBuilder();
 		//PUBLIC STRING getPessoa(){
-		builder.append(HelperString.spacingFirstLevel + "public "+attribute.getType() + " get"+HelperString.upperFirst(attribute.getName()) + "(){");
+		builder.append(HelperString.spacingFirstLevel + "public "+attribute.getAttributeType().getType() + " get"+HelperString.upperFirst(attribute.getAttributeType().getName()) + "(){");
 		builder.append("\n");
-		builder.append(HelperString.spacingSecondLevel + "return this."+HelperString.lowwerAll(attribute.getName()) +";");
+		builder.append(HelperString.spacingSecondLevel + "return this."+HelperString.lowwerAll(attribute.getAttributeType().getName()) +";");
 		builder.append("\n");
 		builder.append(HelperString.spacingFirstLevel +"}");
 
@@ -33,9 +33,9 @@ public class GetAndSetGenerator {
 	public static String generatorSet(Attribute attribute){
 		StringBuilder builder = new StringBuilder();
 		//PUBLIC STRING getPessoa(){
-		builder.append(HelperString.spacingFirstLevel +"public void set"+HelperString.upperFirst(attribute.getName()) + "("+HelperString.upperFirst(attribute.getDataType()) + " " + HelperString.lowwerAll(attribute.getName()) +"){");
+		builder.append(HelperString.spacingFirstLevel +"public void set"+HelperString.upperFirst(attribute.getAttributeType().getName()) + "("+HelperString.upperFirst(attribute.getAttributeType().getName()) + " " + HelperString.lowwerAll(attribute.getAttributeType().getName()) +"){");
 		builder.append("\n");
-		builder.append(HelperString.spacingSecondLevel +"this."+HelperString.lowwerAll(attribute.getName()) +" = "+HelperString.lowwerAll(attribute.getName() +";"));
+		builder.append(HelperString.spacingSecondLevel +"this."+HelperString.lowwerAll(attribute.getAttributeType().getName()) +" = "+HelperString.lowwerAll(attribute.getAttributeType().getName() +";"));
 		builder.append("\n");
 		builder.append(HelperString.spacingFirstLevel +"}");
 
